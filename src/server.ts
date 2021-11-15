@@ -3,6 +3,9 @@ import morgan from 'morgan';
 import cors from 'cors';
 import compression from 'compression';
 import todoRestaurante from './routes/restaurantes.routes';
+import todoUser from './routes/usuarios.routes';
+import todoPlatos from './routes/platos.routes';
+
 
 class Server{
     public app:express.Application;
@@ -22,7 +25,9 @@ class Server{
     }
 
     routes():void{
-        this.app.use("/v1/restaurantes", todoRestaurante)
+        this.app.use("/v1/restaurantes", todoRestaurante);
+        this.app.use("/v1/platos", todoPlatos );
+        this.app.use("/v1/usuarios", todoUser);
     }
     public start():void{
         this.app.listen(this.app.get('PORT'), ()=>{
