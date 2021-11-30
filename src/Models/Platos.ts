@@ -8,6 +8,7 @@ const platoschema=new Schema({
     nombreRest:{type:String, require:true},  
     comentario:{type:String, require:true}, 
     calificación:{type:Number, require:true},
+    url:{type:String, require:true},
     dateAt:{type:Date, default:Date.now},
 });
 

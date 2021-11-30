@@ -14,8 +14,8 @@ class PlatosRoutes{
     }
 
     public async postTodoPlato(req: Request, res:Response): Promise<any>{
-        const {nombre,descripcion,precio,nombreRest,comentario,calificación}= req.body;
-        const newRestaurant= new Plato({nombre,descripcion,precio,nombreRest,comentario,calificación});
+        const {nombre,descripcion,precio,nombreRest,comentario,calificación,url}= req.body;
+        const newRestaurant= new Plato({nombre,descripcion,precio,nombreRest,comentario,calificación,url});
         await newRestaurant.save();
         return res.json({status:200, desc: 'Guardar'});
     }

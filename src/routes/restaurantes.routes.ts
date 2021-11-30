@@ -14,8 +14,8 @@ class RestarurantesRoutes{
     }
 
     public async postTodoRestaurante(req: Request, res:Response): Promise<any>{
-        const {nombre,descripcion,horario,direccion,comentario,calificación}= req.body;
-        const newRestaurant= new Restaurantes({nombre,descripcion,horario,direccion,comentario,calificación});
+        const {nombre,descripcion,horario,direccion,comentario,calificación,url}= req.body;
+        const newRestaurant= new Restaurantes({nombre,descripcion,horario,direccion,comentario,calificación,url});
         await newRestaurant.save();
         return res.json({status:200, desc: 'Guardar'});
     }
