@@ -1,7 +1,7 @@
 // @ts-ignore
 import mongoose from 'mongoose';
 
-const Mongo_URL='mongodb+srv://ruth:Pradaruth94.@etitc.xkb88.mongodb.net/myDatabaseRestaurant?retryWrites=true&w=majority';
+const Mongo_URL='mongodb+srv://mauricio:1234@mauricio.ooixc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.set('useFindAndModify', false);
 mongoose.connect(Mongo_URL || process.env.Mongo_URL,{

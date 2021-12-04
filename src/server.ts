@@ -2,9 +2,10 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import compression from 'compression';
-import todoRestaurante from './routes/restaurantes.routes';
-import todoUser from './routes/usuarios.routes';
-import todoPlatos from './routes/platos.routes';
+import todoAccesorio from './routes/accesorio.routes';
+import todoElectrodomestico from './routes/electrodomestico.routes';
+import todoRopa from './routes/ropa.routes';
+import todoTecnologia from './routes/tecnologia.routes';
 
 
 class Server{
@@ -25,9 +26,10 @@ class Server{
     }
 
     routes():void{
-        this.app.use("/v1/restaurantes", todoRestaurante);
-        this.app.use("/v1/platos", todoPlatos );
-        this.app.use("/v1/usuarios", todoUser);
+        this.app.use("/v1/accesorio", todoAccesorio);
+        this.app.use("/v1/electrodomestico", todoElectrodomestico );
+        this.app.use("/v1/ropa", todoRopa);
+        this.app.use("/v1/tecnologia", todoTecnologia);
     }
     public start():void{
         this.app.listen(this.app.get('PORT'), ()=>{
